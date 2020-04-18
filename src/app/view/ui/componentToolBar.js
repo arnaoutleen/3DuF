@@ -46,6 +46,7 @@ export default class ComponentToolBar {
         this.__llChamberButton = document.getElementById("llchamber_button");
         this.__threeDMixerButton = document.getElementById("3dmixer_button");
         this.__RNAExtractionChamber = document.getElementById("RNAExtractionChamber_button");
+        this.__ElectrophoresisChamber = document.getElementById("ElectrophoresisChamber_button");
 
         //Create all the parameter menu buttons
 
@@ -77,6 +78,7 @@ export default class ComponentToolBar {
         this.__llChamberParams = document.getElementById("llchamber_params_button");
         this.__threeDMixerParams = document.getElementById("3dmixer_params_button");
         this.__RNAExtractionChamberParams = document.getElementById("RNAExtractionChamber_params_button");
+        this.__ElectrophoresisChamberParams = document.getElementById("ElectrophoresisChamber_params_button");
 
         this.__insertTextDialog = new InsertTextDialog();
 
@@ -111,6 +113,7 @@ export default class ComponentToolBar {
             LLChamber: this.__llChamberButton,
             "3DMixer": this.__threeDMixerButton,
             RNAExtractionChamber: this.__RNAExtractionChamberButton
+            ElectrophoresisChamber: this.__ElectrophoresisChamberButton
         };
 
         this.__setupEventHandlers();
@@ -314,6 +317,12 @@ export default class ComponentToolBar {
             ref.setActiveButton("RNAExtractionChamber");
             ref.__viewManagerDelegate.switchTo2D();
         };
+        this.__ElectrophoresisChamber.onclick = function() {
+            Registry.viewManager.activateTool("ElectrophoresisChamber");
+
+            ref.setActiveButton("ElectrophoresisChamber");
+            ref.__viewManagerDelegate.switchTo2D();
+        };
     }
 
     setActiveButton(feature) {
@@ -362,7 +371,8 @@ export default class ComponentToolBar {
         this.__alignmentMarksParams.onclick = ComponentToolBar.getParamsWindowCallbackFunction("AlignmentMarks", "Basic");
         this.__llChamberParams.onclick = ComponentToolBar.getParamsWindowCallbackFunction("LLChamber", "Basic");
         this.__threeDMixerParams.onclick = ComponentToolBar.getParamsWindowCallbackFunction("3DMixer", "Basic");
-        this.__RNAExtractionChamberParams.onclick = ComponentToolBar.getParamWindowCallbackFunction("RNAExtractionChamber","Basic")
+        this.__RNAExtractionChamberParams.onclick = ComponentToolBar.getParamWindowCallbackFunction("RNAExtractionChamber","Basic");
+        this.__ElectrophoresisChamberParams.onclick = ComponentToolBar.getParamWindowCallbackFunction("ElectrophoresisChamber","Basic")
     }
 
     static getParamsWindowCallbackFunction(typeString, setString, isTranslucent = false) {

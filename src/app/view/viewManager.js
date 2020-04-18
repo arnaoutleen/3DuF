@@ -916,6 +916,7 @@ export default class ViewManager {
         this.tools["LLChamber"] = new MultilayerPositionTool("LLChamber", "Basic");
         this.tools["3DMixer"] = new MultilayerPositionTool("3DMixer", "Basic");
         this.tools["RNAExtractionChamber"] = new MultilayerPositionTool("RNAExtractionChamber","Basic");
+        this.tools["ElectrophoresisChamber"] = new MultilayerPositionTool("ElectrophoresisChamber","Basic");
 
 
         //All the new tools

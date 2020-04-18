@@ -25,6 +25,7 @@ import YTree from "../library/ytree";
 import LLChamber from "../library/llChamber";
 import ThreeDMixer from "../library/threeDMixer";
 import RNAExtractionChamber from "../library/RNAExtractionChamber";
+import ElectrophoresisChamber from "../library/ElectrophoresisChamber";
 
 export default class FeatureSet {
     constructor(definitions, tools, render2D, render3D, setString) {
@@ -77,6 +78,8 @@ export default class FeatureSet {
             "3DMixer_control": { object: new ThreeDMixer(), key: "CONTROL" }
             RNAExtractionChamber: { object: new RNAExtractionChamber(), key: "FLOW" },
             RNAExtractionChamber_control: { object: new RNAExtractionChamber(), key: "CONTROL" },
+            ElectrophoresisChamber: { object: new ElectrophoresisChamber(), key: "FLOW" },
+            ElectrophoresisChamber_control: { object: new ElectrophoresisChamber(), key: "CONTROL" },
         };
 
         // this.__checkDefinitions();
